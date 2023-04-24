@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Block1.MethodsMenu</StartupObject>
+    <StartupObject>Block1.Magic8Ball</StartupObject>
   </PropertyGroup>
 
 </Project>

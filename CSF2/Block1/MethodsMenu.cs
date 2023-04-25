@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SignatureLibrary;
 
 namespace Block1
 {
@@ -10,7 +11,8 @@ namespace Block1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Methods Menu - Creating our own methods!");
+            //Console.WriteLine("Methods Menu - Creating our own methods!");
+            Signature.Header("Custom Methods");
 
             /*
              * This program will let the user choose between various mini-programs
@@ -64,11 +66,11 @@ namespace Block1
                         break;
                     case "T":
                         Console.WriteLine("Display Time");
-                        //TODO DisplayTime()
+                        DateTimeWarehouse.DisplayTime();
                         break;
                     case "C":
                         Console.WriteLine("Calendar App");
-                        //TODO CalendarApp()
+                        DateTimeWarehouse.CalendarApp();
                         break;
                     case "X":
                         Console.WriteLine("Thank you for using our program!");

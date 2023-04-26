@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Block3.IndexedCollections</StartupObject>
+    <StartupObject>Block3.ReferenceCollections</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

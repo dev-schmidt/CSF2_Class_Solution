@@ -1,4 +1,4 @@
-﻿namespace Charity
+﻿ namespace Charity
 {
     /*
     * This Class Library project is intended to store classes that will be consumed 

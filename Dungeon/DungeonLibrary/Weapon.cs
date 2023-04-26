@@ -18,5 +18,10 @@ namespace DungeonLibrary
             bonusHitChance – int
             isTwoHanded - bool
         */
+
+        //add a _weapon type 
+        //add a property
+        //update constructor with parameter and assignment
+        //add WeaponType to the ToString() 
     }
 }

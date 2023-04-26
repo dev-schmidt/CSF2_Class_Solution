@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Block3.ReferenceCollections</StartupObject>
+    <StartupObject>Block3.Enums</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

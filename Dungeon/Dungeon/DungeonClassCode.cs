@@ -85,12 +85,29 @@ namespace Dungeon
         {
             //create a string[]
             string[] rooms = {
-                "Room 1",
-                "Room 2",
-                "Room 3",
-                "Room 4",
-                "Room 5",
-                "Room 6"
+                "A modest murky cave in a gloomy bog marks the entrance to this dungeon. Beyond the murky cave lies a small, " +
+                "dusty room. The floor is covered in dead insects, rubble, and large bones...",
+
+                "Through a narrow gap in an eerie cliff side, you find a small dark room. Moss and large puddles accumulate " +
+                "between the roots which snake accross the floor. Your torch allows you to see the remnants of sacks, crates " +
+                "and caskets wasted and ravaged by time.",
+
+                "Beneath the looming remains of a formidable tower lies a seemingly endless corridor of locked brass doors " +
+                "large enough for five men to stand within their thresholds. As you continue down the corridor, beads of " +
+                "sweat run from your brow as the temperture rises. Along with it, your suspicion that you are being led into a trap",
+
+                "Amidst a somber thicket stand several tall, stone statues of gods long forgotten. As you draw closer, you begin " +
+                "to notice the crunching of tiny bits of rock growing louder with each step. Admiring the handiwork of the statues " +
+                "themselves, you freeze as you stare into undeniably living stone eyes.",
+
+                "The whine of hidden machinery drowns out your own thoughts as you enter a grimy hexagonal chamber. Manic, bloody " +
+                "words cover the fractured and buckling walls. Rodents scurry from sight as a trap door slowly creaks open " +
+                "with a slimy green glow.",
+
+                "You seek refuge from the blizzard in a frozen ship-wreck by the mouth of the river. The smell of gun powder " +
+                "is nauseating but you wish only to rest here for a short spell. Within your dreams, you lounge on the upper deck, " +
+                "the summery sea breeze tickling at your bare feet. Suddenly, you are disturbed by an otherworldy wail, and look up to " +
+                "see a narrow silhouette looming in the crow's nest, the setting sun visible between it's exposed ribs."
                 };
             //rng
             Random rand = new Random();

@@ -38,7 +38,15 @@
         public int Life
         {
             get { return _life; }
-            set { _life = value; }
+            set 
+            {
+                if (value > MaxLife)
+                    _life = MaxLife;
+                else
+                {
+                    _life = value;
+                }
+            }
         }
 
         public int HitChance
@@ -57,7 +65,35 @@
         //CONSTRUCTORS - Life = life; -> Life = maxLife.
         //no matter what, assign maxLife BEFORE Life.
 
+        public Character(string name, int maxLife, int life, int hitChance, int block)
+        {
+            Name = name;
+            MaxLife = maxLife;
+            Life = life;
+            HitChance = hitChance;
+            Block = block;
+        }
 
+        public Character() { }
+
+        public override string ToString()
+        {
+            return $"{Name}\n" +
+                $"Maximum Life Points: {MaxLife}" +
+                $"Life Points: {Life}" +
+                $"Chance to Hit: {HitChance}" +
+                $"Block: {Block}";
+        }
+
+        public int CalcBlock()
+        {
+            return _block;
+        }
+
+        public int CalcHitChance()
+        {
+            return _hitChance;
+        }
 
         //monkeys
         //METHODS

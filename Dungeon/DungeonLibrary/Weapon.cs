@@ -19,9 +19,81 @@ namespace DungeonLibrary
             isTwoHanded - bool
         */
 
+        //FIELDS
+        private string _name;
+        private int _minDamage;
+        private int _maxDamage;
+        private int _bonusHitChance;
+        private bool _isTwoHanded;
+
+
         //add a _weapon type 
         //add a property
         //update constructor with parameter and assignment
         //add WeaponType to the ToString() 
-    }
-}
+
+        //PROPERTIES
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public int MinDamage
+        {
+            get { return _minDamage; }
+            set
+            {
+                if (value < _maxDamage && value > 0)
+                {
+                    _minDamage = value;
+                }
+                   
+                else
+                {
+                    _minDamage = 1;
+                }
+            }
+        }
+
+        public int MaxDamage
+        {
+            get { return _maxDamage; }
+            set { _maxDamage = value; }
+        }
+
+        public int BonusHitChance
+        {
+            get { return _bonusHitChance; }
+            set { _bonusHitChance = value; }
+        }
+
+        public bool IsTwoHanded
+        {
+            get { return _isTwoHanded; }
+            set { _isTwoHanded = value;}
+        }
+
+        //CONSTRUCTORS
+
+        public Weapon (string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded)
+        {
+            Name = name;
+            MinDamage = minDamage;
+            MaxDamage = maxDamage;
+            BonusHitChance = bonusHitChance;
+            IsTwoHanded = isTwoHanded;
+        }
+
+        public Weapon() { }
+
+        public override string ToString()
+        {
+            return $"{Name}\n" +
+                $"Minimum Damage: {MinDamage}" +
+                $"Maximum Damage: {MaxDamage}" +
+                $"Bonus Hit Chance: {BonusHitChance}" +
+                $"Two-Handed: {IsTwoHanded}";
+        }
+    }//end class
+}//end namespace

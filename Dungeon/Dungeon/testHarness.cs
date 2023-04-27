@@ -12,12 +12,16 @@ namespace Dungeon
     {
         static void Main(string[] args)
         {
-            Character c1 = new Character("Gavino", 100 , 100 , 50 , 30 );
-            Console.WriteLine(c1);
+            //Character c1 = new Character("Gavino", 100 , 100 , 50 , 30 );
+            //Console.WriteLine(c1);
 
-            Weapon w1 = new Weapon("3-4 dozen claymore mines", 10, 40, 9, false);
-                Console.WriteLine(w1);
-            
+            //Weapon w1 = new Weapon("3-4 dozen claymore mines", 10, 40, 9, false);
+            //Console.WriteLine(w1);
+
+            //TODO test player creation and ToString(), calcblock, calcdamage, calchitchance
+            //TODO test monster creation and ToString(), calcblock, calcdamage, calchitchance
+            //Character [] characters = { new Player(), new Monster() };
+
         }
     }
 }

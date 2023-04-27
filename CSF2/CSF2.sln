@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Block3", "Block3\Block3.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Block4", "Block4\Block4.csproj", "{DBE65E4D-027E-4B9A-81FD-5B2DC57325A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University", "University\University.csproj", "{FFEDBECC-1F84-4E8C-B8E2-0EFBCDD60E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "University", "University\University.csproj", "{FFEDBECC-1F84-4E8C-B8E2-0EFBCDD60E1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store", "Store\Store.csproj", "{601C0DD2-9A3A-4930-AEEF-7F2FF082D9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FFEDBECC-1F84-4E8C-B8E2-0EFBCDD60E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFEDBECC-1F84-4E8C-B8E2-0EFBCDD60E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFEDBECC-1F84-4E8C-B8E2-0EFBCDD60E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601C0DD2-9A3A-4930-AEEF-7F2FF082D9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601C0DD2-9A3A-4930-AEEF-7F2FF082D9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601C0DD2-9A3A-4930-AEEF-7F2FF082D9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601C0DD2-9A3A-4930-AEEF-7F2FF082D9F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

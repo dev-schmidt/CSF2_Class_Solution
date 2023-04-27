@@ -12,10 +12,20 @@ namespace DungeonLibrary
     //The enemies/monsters will NOT have this.
     internal class Race
     {
+        enum CharacterRace
+        {
+            Orc,
+            Human,
+            Elf,
+            Dwarf,
+            Khajiit
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("The race I have chosen is " +
-              enum CharacterRace[] races = Enum.GetValues<CharacterRace>();
+              CharacterRace[] races = Enum.GetValues<CharacterRace>();
             foreach (CharacterRace item in races)
             {
                 Console.WriteLine($"{(int)item + 1} - {item}");

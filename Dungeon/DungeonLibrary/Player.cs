@@ -12,9 +12,10 @@ namespace DungeonLibrary
     {
         public Race PlayerRace { get; set; }
         public Weapon EquippedWeapon { get; set; }
-        public Player (string name, int hitChance, int block, int maxLife, Race playerRace, Weapon 
+        public Player (string name, int hitChance, int block, int maxLife, //character params
+            Race playerRace, Weapon //player params
             equippedWeapon) 
-            : base(name, hitChance, block, maxLife)
+            : base(name,hitChance, block, maxLife)//send ONLY character params back to the parent
         {
             PlayerRace = playerRace;
             EquippedWeapon = equippedWeapon;
@@ -49,6 +50,7 @@ namespace DungeonLibrary
                     break;
                 case Race.Orc:
                     raceDescription = "He likes to smash things!";
+                    MaxLife += 10;
                     break;
                 default:
                     break;

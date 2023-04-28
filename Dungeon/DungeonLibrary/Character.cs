@@ -14,6 +14,7 @@
             
             INCLUDE a business rule that Life cannot be more than MaxLife. If it is, set it equal to MaxLife.
          */
+        
 
         //funny
         //FIELDS
@@ -69,12 +70,12 @@
         //CONSTRUCTORS - Life = life; -> Life = maxLife.
         //no matter what, assign maxLife BEFORE Life.
 
-        public Character(string name, int maxLife, int hitChance, int block)
+        public Character(string name, int hitChance, int block, int maxLife)
         {
             Name = name;
             MaxLife = maxLife;
-            Life = maxLife;
             HitChance = hitChance;
+            Life = maxLife;
             Block = block;
         }
 

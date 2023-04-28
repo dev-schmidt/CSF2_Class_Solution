@@ -21,13 +21,28 @@ namespace DungeonLibrary
         //weapon you have
         #endregion
 
-        public Monster(string name, int maxLife, int hitChance, int block) 
+        private int _minDamage;
+        public int MaxDamage { get; set; }
+        public string Description { get; set; }
+
+        public int MinDamage
+        {
+            get { return _minDamage; }
+            set { _minDamage = value < MaxDamage && value > 0 ? value : 1; }
+        }
+      
+        public Monster(string name, int hitChance, int block, int maxLife, 
+            int minDamage, int maxDamage, string description)
             : base(name, hitChance, block, maxLife)
         {
+            if (maxDamage <= minDamage || minDamage <= 0)
+            {
+                throw new ArgumentException("Min damange must be between 0 and Max Damage");
+            }
             //TODO - Create the props/fields, add parameters, and assign to your custom props
             MaxDamage = maxDamage;
             MinDamage = minDamage;
-            Description = DescriptionAttribute;
+            Description = description;
         }
         public Monster()
         {
@@ -35,11 +50,15 @@ namespace DungeonLibrary
         }
         //TODO - override the ToString() to include your new custom props.
         //TODO - override CalcDamage()
+        public override string ToString()
+        {
+            return base.ToString() + $"\nDamage: {MinDamage} - {MaxDamage}\n{Description}";
+        }
 
         public override int CalcDamage()
         {
+            return new Random().Next(MinDamage, MaxDamage + 1);
             //return a random number betwween your min and max damage properties
-            throw new NotImplementedException();
             //DON'T run the program will ^this is here
         }
 

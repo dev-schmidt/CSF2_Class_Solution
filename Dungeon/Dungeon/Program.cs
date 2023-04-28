@@ -164,10 +164,12 @@ namespace Dungeon
 
         private static Monster GetMonster()
         {
+                         //name, hitChnc,block,maxLife,mindmg,mxdmg,dscrpt
             Monster m1 = new("Orc", 50, 40, 20, 1, 8, "A fierce orc weilding a rusty axe");
             Monster m2 = new("Troll", 40, 50, 30, 1, 8, "A massive troll with a club.");
             Monster m3 = new("Giant Enemy Spider", 70, 30, 10, 1, 8, "A giant spider with venomous fangs.");
             Monster m4 = new("Goblin", 15, 25, 60, 1, 8, "A sneaky goblin with a sharp knife.");
+            Cyclist m5 = new();
 
             Monster[] monsters =
             {
@@ -175,6 +177,8 @@ namespace Dungeon
                 m2,
                 m3,
                 m4, m4, m4, m4,
+                m5,
+                
             };
 
             return monsters[new Random().Next(monsters.Length)];

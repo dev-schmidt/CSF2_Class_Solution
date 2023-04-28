@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,9 @@ namespace DungeonLibrary
             : base(name, hitChance, block, maxLife)
         {
             //TODO - Create the props/fields, add parameters, and assign to your custom props
+            MaxDamage = maxDamage;
+            MinDamage = minDamage;
+            Description = DescriptionAttribute;
         }
         public Monster()
         {

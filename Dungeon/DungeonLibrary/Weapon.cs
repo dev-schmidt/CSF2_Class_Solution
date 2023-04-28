@@ -25,7 +25,7 @@ namespace DungeonLibrary
         private int _maxDamage;
         private int _bonusHitChance;
         private bool _isTwoHanded;
-
+        private WeaponType _type;
 
         //add a _weapon type 
         //add a property
@@ -74,26 +74,33 @@ namespace DungeonLibrary
             set { _isTwoHanded = value;}
         }
 
+        public WeaponType Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
         //CONSTRUCTORS
 
-        public Weapon (string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded)
+        public Weapon (string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded,
+            WeaponType type)
         {
             Name = name;
             MinDamage = minDamage;
             MaxDamage = maxDamage;
             BonusHitChance = bonusHitChance;
             IsTwoHanded = isTwoHanded;
+            Type = type;
         }
 
         public Weapon() { }
 
         public override string ToString()
         {
-            return $"{Name}\n" +
+            return $"{Name}:\n" +
+                $"Two-Handed: {(IsTwoHanded ? "Two" : "One")}-Handed {Type}" +
                 $"Minimum Damage: {MinDamage}" +
                 $"Maximum Damage: {MaxDamage}" +
-                $"Bonus Hit Chance: {BonusHitChance}" +
-                $"Two-Handed: {IsTwoHanded}";
+                $"Bonus Hit Chance: {BonusHitChance}";
         }
     }//end class
 }//end namespace

@@ -48,6 +48,7 @@ namespace DungeonLibrary
         {
             //default ctor
         }
+
         //TODO - override the ToString() to include your new custom props.
         //TODO - override CalcDamage()
         public override string ToString()

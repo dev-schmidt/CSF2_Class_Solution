@@ -1,8 +1,9 @@
-﻿using System.Runtime.InteropServices;
+﻿using DungeonLibrary;
+using System.Runtime.InteropServices;
 
 namespace Dungeon
 {
-    internal class DungeonClassCode
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -15,10 +16,18 @@ namespace Dungeon
             # endregion
 
             //TODO - variable to keep score
-
+            //potential expansion, use "money" of some sort to let the user buy potions,
+            //weapons, whatever.
+            int score = 0;
             //TODO - weapon object creation
 
+            Weapon wep = new("Long Sword", 1, 8, 10, false, WeaponType.Sword);
+            //POTENTIAL EXPANSION = show the user a list of weapons and let them pick one. Or, assign one
+            //randomly.
+
             //TODO - Player object creation
+            //Recommended expansion = player customization. let the user pick a name and a race.
+            Player player = new("Leeroy Jenkins", 70, 15, 40, Race.Elf, wep);
 
             //main game loop
             bool lose = false;
@@ -27,6 +36,9 @@ namespace Dungeon
                 //generate a room
                 Console.WriteLine(GetRoom());
                 //TODO - generate a monster
+                Monster monster = GetMonster();
+                Console.WriteLine("In this room: " + monster.Name);
+
 
                 #region Main Menu Loop
                 //Encounter/Menu Loop
@@ -48,14 +60,38 @@ namespace Dungeon
                     switch (choice)
                     {
                         case ConsoleKey.A://TODO Combat
+                            #region possible expansion - racial/weapon bonus
+                            //give certain races or characters with a certain weapon an advantage.
+                            //if the playter race is dark elf, then combat.doattack(player, monster)
+                            #endregion
+                            Combat.DoBattle(player, monster);
+
+                            //check if the monster is dead
+                            if (monster.Life <= 0)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"\nYou killed {monster.Name}!\n");
+                                Console.ResetColor();
+                                reload = true;
+                                score++;
+                                //POSSIBLE EXPANSION = combat rewards - money, weapons, potions etc.
+                            }
+
                             break;
-                        case ConsoleKey.R://TODO run away
+                        case ConsoleKey.R://run away
                             Console.WriteLine("Run away!");
+                            //Attack of Opportunity
+                            Combat.DoAttack(monster, player);
                             reload = true;
                             break;
-                        case ConsoleKey.P://TODO player
+                        case ConsoleKey.P://player
+                            Console.WriteLine("Player Info");
+                            Console.WriteLine(player);
+                            Console.WriteLine("You have defeated " + score + "monsters.");
                             break;
-                        case ConsoleKey.M://TODO monster
+                        case ConsoleKey.M://monster
+                            Console.WriteLine("Monster Info");
+                            Console.WriteLine(monster);
                             break;
 
                         case ConsoleKey.Escape:
@@ -70,14 +106,20 @@ namespace Dungeon
                             break;
                     }//end switch
 
-                    //TODO check player life. If they're dead, game over.
+                    //check player life. If they're dead, game over.
+                    if (player.Life <= 0)
+                    {
+                        Console.WriteLine("Dude, you died.\a");
+                        lose = true;
+                    }
                 } while (!reload && !lose);
                 //while reload and lose are BOTH FALSE, keep looping.
                 #endregion
 
             }while (!lose);
             //while lose is false, keep looping.
-            //TODO output the final score
+            //output the final score
+            Console.WriteLine("You have defeated " + score + $"monster{(score == 1? "." : "s.")}");
         }//end main
 
         //TODO GetRoom() returns a string (reference magic 8 ball)
@@ -119,5 +161,23 @@ namespace Dungeon
 
 
         }//end GetRoom()
+
+        private static Monster GetMonster()
+        {
+            Monster m1 = new("Orc", 50, 40, 20, 1, 8, "A fierce orc weilding a rusty axe");
+            Monster m2 = new("Troll", 40, 50, 30, 1, 8, "A massive troll with a club.");
+            Monster m3 = new("Giant Enemy Spider", 70, 30, 10, 1, 8, "A giant spider with venomous fangs.");
+            Monster m4 = new("Goblin", 15, 25, 60, 1, 8, "A sneaky goblin with a sharp knife.");
+
+            Monster[] monsters =
+            {
+                m1,m1,
+                m2,
+                m3,
+                m4, m4, m4, m4,
+            };
+
+            return monsters[new Random().Next(monsters.Length)];
+        }
     }//end Program
 }//end namespace

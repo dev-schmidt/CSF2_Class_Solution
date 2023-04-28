@@ -22,6 +22,8 @@
         private int _life;
         private int _hitChance;
         private int _block;
+        private string _race;
+
 
         //people
         //PROPERTIES

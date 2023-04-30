@@ -44,6 +44,7 @@ namespace DungeonLibrary
         }
 
         //TODO I don't think the attack bonus is working
+        //I might want to change it to a chance for annoying beeps
         public override int CalcBlock()
         {
             int bonus = AttackBonus;

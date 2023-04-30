@@ -170,7 +170,8 @@ namespace Dungeon
             //Monster m3 = new("Giant Enemy Spider", 70, 30, 10, 1, 8, "A giant spider with venomous fangs.");
             //Monster m4 = new("Goblin", 15, 25, 60, 1, 8, "A sneaky goblin with a sharp knife.");
             //Cyclist m5 = new();
-            SelfCheckout m6 = new();
+            LaundryBasket m6 = new();
+            SelfCheckout m7 = new();
 
             Monster[] monsters =
             {
@@ -179,7 +180,8 @@ namespace Dungeon
                 //m3,
                 //m4, m4, m4, m4,
                 //m5,
-                m6
+                //m6
+                m7
                 
             };
 

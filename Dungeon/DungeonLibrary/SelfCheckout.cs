@@ -8,52 +8,56 @@ namespace DungeonLibrary
 {
     public class SelfCheckout : Monster
     {
-        public int RandomHeal { get; set; }
-        public int RandomHealChance { get; set; }
+        public int AttackBonus { get; set; }
+        public int AttackBonusChance { get; set; }
         public string Description { get; set; }
 
+        //FQTOR
         public SelfCheckout(string name, int hitChance, int block, int maxLife,
-            int minDamage, int maxDamage, string description, int randomHeal,
-            int randomHealChance)
+            int minDamage, int maxDamage, string description, int attackBonus,
+            int attackBonusChance)
             : base(name, hitChance, block, maxLife, minDamage, maxDamage, description)
         {
-            RandomHeal = randomHeal;
-            RandomHealChance = randomHealChance;
+            AttackBonus = attackBonus;
+            AttackBonusChance = attackBonusChance;
         }
 
+        //CTOR
         public SelfCheckout()
         {
-            MaxLife = 15;
-            MaxDamage = 20;
-            Life = 15;
-            MinDamage = 5;
-            HitChance = 35;
+            MaxLife = 10;
+            MaxDamage = 5;
+            Life = 10;
+            MinDamage = 1;
+            HitChance = 70;
             Name = "Self Checkout Machine";
-            Description = "Please take your receipt.";
-            RandomHeal = 5;
-            RandomHealChance = 40;
+            Description = "Frequent shopper account activated!";
+            AttackBonus = 10;
+            AttackBonusChance = 99;
             //POTENTIAL ADDITION - make the machine say random phrases
         }
 
         public override string ToString()
         {
-            return base.ToString() + $"Name: {Name}\nDamage: {MinDamage} - {MaxDamage}\n" +
-                $"{Description}";
+            return base.ToString() + $"Name: {Name}\n\nDamage: " +
+                $"{MinDamage} - {MaxDamage}\n\n{Description}";
         }
 
+        //TODO I don't think the attack bonus is working
         public override int CalcBlock()
         {
-            int newHeal = Life;
+            int bonus = AttackBonus;
             Random rand = new Random();
             int roll = rand.Next(101);
-            
-            if(roll <= RandomHealChance)
+
+            if ( roll < 30)
             {
-                newHeal += RandomHeal;
-                Console.WriteLine($"The machine healed itself by {RandomHeal} points!");
+                bonus += MaxDamage;
+                Console.WriteLine($"The machine did {bonus} points of extra damage!");
             }
-            return newHeal;
-           
+            return bonus;
         }
+
+
     }
 }

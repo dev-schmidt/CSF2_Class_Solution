@@ -59,7 +59,7 @@ namespace DungeonLibrary
         public override int CalcDamage()
         {
             return new Random().Next(MinDamage, MaxDamage + 1);
-            //return a random number betwween your min and max damage properties
+            //return a random number between your min and max damage properties
             //DON'T run the program will ^this is here
         }
 

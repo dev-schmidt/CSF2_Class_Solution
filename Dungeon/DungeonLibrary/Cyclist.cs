@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace DungeonLibrary
 {
-    public class Cyclist : Monster
+    public sealed class Cyclist : Monster
     {
         public int BlockBonus { get; set; }
         public int BlockBonusChance { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class LaundryBasket : Monster
+    public sealed class LaundryBasket : Monster
     {
         public int RandomHeal { get; set; }
         public int RandomHealChance { get; set; }

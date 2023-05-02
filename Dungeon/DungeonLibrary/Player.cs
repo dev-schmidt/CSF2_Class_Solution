@@ -8,7 +8,7 @@ namespace DungeonLibrary
 {
     //MAKE IT PUBLIC!
     //make it a child of Character
-    public class Player : Character
+    public sealed class Player : Character
     {
         public Race PlayerRace { get; set; }
         public Weapon EquippedWeapon { get; set; }

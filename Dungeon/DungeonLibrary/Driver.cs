@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    internal class Driver : Monster
+    public sealed class Driver : Monster
     {
         
     }

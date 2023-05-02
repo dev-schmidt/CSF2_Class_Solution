@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonLibrary
 {
-    public class SelfCheckout : Monster
+    public sealed class SelfCheckout : Monster
     {
         public int AttackBonus { get; set; }
         public int AttackBonusChance { get; set; }

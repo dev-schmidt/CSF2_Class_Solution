@@ -33,14 +33,17 @@ namespace DungeonLibrary
             Life = 10;
             MinDamage = 1;
             HitChance = 65;
+            Block = 15;
             Name = "Angry Cyclist";
-            Description = "They saw you riding on the sidewalk.";
+            Description = "A very old man in very tight clothes. " +
+                "He is angry because he saw you riding your bike on the sidewalk yesterday.";
             BlockBonus = 10;
             BlockBonusChance = 40;
         }
         public override string ToString()
         {
-            return base.ToString() + $"Name: {Name}\nDamage: {MinDamage} - {MaxDamage}\n{Description}";
+            return base.ToString() + $"Name: {Name}\nDamage: {MinDamage} - {MaxDamage}\n{Description}\n" +
+                $"Cyclist has {BlockBonusChance} of getting a block bonus.";
 
         }
 
@@ -49,11 +52,14 @@ namespace DungeonLibrary
             int betterBlock = Block;
 
             Random rand = new Random();
-            int chance = rand.Next(101);
+            int chance = rand.Next(1, 101);
 
             if (chance <= BlockBonusChance)
             {
                 betterBlock += BlockBonus;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Block bonus!");
+                Console.ResetColor();
             }
             return betterBlock;
         }

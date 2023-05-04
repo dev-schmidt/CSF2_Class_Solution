@@ -45,11 +45,11 @@ namespace DungeonLibrary
         {
             int newHeal = Life;
             Random rand = new Random();
-            int roll = rand.Next(101);
+            int roll = rand.Next(1, 101);
             
             if(roll <= RandomHealChance)
             {
-                newHeal = MaxLife;
+                Life = MaxLife;
                 Console.WriteLine("Are you kidding me? " +
                     "It just filled itself up with more clothes!");
             }

@@ -11,7 +11,8 @@ namespace Dungeon
             //Start to play background music? (.wav) < 100MB
             //System.Windows.Extensions (NuGet package)
             Console.Title = "THE DUNGEON OF MUNDANE ADVERSARIES!";
-            Console.WriteLine("Welcome, adventurer! Your journey awaits!");
+            Console.WriteLine("                       -================THE DUNGEON OF MUNDANE ADVERSARIES!================-\n");
+            Console.WriteLine("Welcome, adventurer! Your journey awaits!\n");
 
             # endregion
 
@@ -128,29 +129,29 @@ namespace Dungeon
         {
             //create a string[]
             string[] rooms = {
-                "A modest murky cave in a gloomy bog marks the entrance to this dungeon. Beyond the murky cave lies a small, " +
-                "dusty room. The floor is covered in dead insects, rubble, and large bones...",
+                "A modest cave in a gloomy bog marks the entrance to this dungeon. Within the cave lies a small, " +
+                "dusty room. The floor is covered in dead insects, rubble, and large bones...\n",
 
                 "Through a narrow gap in an eerie cliff side, you find a small dark room. Moss and large puddles accumulate " +
                 "between the roots which snake accross the floor. Your torch allows you to see the remnants of sacks, crates " +
-                "and caskets wasted and ravaged by time.",
+                "and caskets wasted and ravaged by time...\n",
 
                 "Beneath the looming remains of a formidable tower lies a seemingly endless corridor of locked brass doors " +
                 "large enough for five men to stand within their thresholds. As you continue down the corridor, beads of " +
-                "sweat run from your brow as the temperture rises. Along with it, your suspicion that you are being led into a trap",
+                "sweat run from your brow as the temperture rises. Along with it, your suspicion that you are being led into a trap...\n",
 
                 "Amidst a somber thicket stand several tall, stone statues of gods long forgotten. As you draw closer, you begin " +
-                "to notice the crunching of tiny bits of rock growing louder with each step. Admiring the handiwork of the statues " +
-                "themselves, you freeze as you stare into undeniably living stone eyes.",
+                "to notice the crunching of tiny bits of rock growing louder with each step. Stopping to admire the handiwork of the statues " +
+                "themselves, you freeze as you sense a presence behind you...\n",
 
                 "The whine of hidden machinery drowns out your own thoughts as you enter a grimy hexagonal chamber. Manic, bloody " +
                 "words cover the fractured and buckling walls. Rodents scurry from sight as a trap door slowly creaks open " +
-                "with a slimy green glow.",
+                "with a horrid green glow...\n",
 
                 "You seek refuge from the blizzard in a frozen ship-wreck by the mouth of the river. The smell of gun powder " +
                 "is nauseating but you wish only to rest here for a short spell. Within your dreams, you lounge on the upper deck, " +
                 "the summery sea breeze tickling at your bare feet. Suddenly, you are disturbed by an otherworldy wail, and look up to " +
-                "see a narrow silhouette looming in the crow's nest, the setting sun visible between it's exposed ribs."
+                "see a silhouette looming in the crow's nest...\n"
                 };
             //rng
             Random rand = new Random();
@@ -171,19 +172,13 @@ namespace Dungeon
             //Monster m3 = new("Giant Enemy Spider", 70, 30, 10, 1, 8, "A giant spider with venomous fangs.");
             //Monster m4 = new("Goblin", 15, 25, 60, 1, 8, "A sneaky goblin with a sharp knife.");
             //Cyclist m5 = new();
-            LaundryBasket m6 = new();
-            SelfCheckout m7 = new();
+            LaundryBasket m1 = new();
+            SelfCheckout m2 = new();
+            Cyclist m3 = new();
 
             Monster[] monsters =
             {
-                //m1,m1,
-                //m2,
-                //m3,
-                //m4, m4, m4, m4,
-                //m5,
-                //m6
-                m7
-                
+                m3
             };
 
             return monsters[new Random().Next(monsters.Length)];

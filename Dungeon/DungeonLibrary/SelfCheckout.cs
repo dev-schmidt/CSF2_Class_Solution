@@ -31,7 +31,7 @@ namespace DungeonLibrary
             MinDamage = 1;
             HitChance = 70;
             Name = "Self Checkout Machine";
-            Description = "Frequent shopper account activated!";
+            Description = "A self-checkout machine where customer assitance is ALWAYS required.";
             AttackBonus = 10;
             AttackBonusChance = 99;
             //POTENTIAL ADDITION - make the machine say random phrases
@@ -45,18 +45,18 @@ namespace DungeonLibrary
 
         //TODO I don't think the attack bonus is working
         //I might want to change it to a chance for annoying beeps
-        public override int CalcBlock()
+        public override int CalcDamage()
         {
-            int bonus = AttackBonus;
+            int damage = AttackBonus;
             Random rand = new Random();
-            int roll = rand.Next(101);
+            int roll = rand.Next(1, 101);
 
             if ( roll < 30)
             {
-                bonus += MaxDamage;
-                Console.WriteLine($"The machine did {bonus} points of extra damage!");
+            
+                Console.WriteLine($"The machine did {damage} points of extra damage!");
             }
-            return bonus;
+            return damage;
         }
 
 

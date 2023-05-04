@@ -47,14 +47,16 @@ namespace DungeonLibrary
         //I might want to change it to a chance for annoying beeps
         public override int CalcDamage()
         {
-            int damage = AttackBonus;
+            int damage = base.CalcDamage();
             Random rand = new Random();
             int roll = rand.Next(1, 101);
 
             if ( roll < 30)
             {
-            
+                damage += AttackBonus;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"The machine did {damage} points of extra damage!");
+                Console.ResetColor();
             }
             return damage;
         }

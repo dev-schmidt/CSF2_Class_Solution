@@ -71,7 +71,7 @@ namespace Dungeon
                             if (monster.Life <= 0)
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine($"\nYou killed {monster.Name}!\n");
+                                Console.WriteLine($"\nYou defeated {monster.Name}!\n");
                                 Console.ResetColor();
                                 reload = true;
                                 score++;
@@ -175,10 +175,11 @@ namespace Dungeon
             LaundryBasket m1 = new();
             SelfCheckout m2 = new();
             Cyclist m3 = new();
+            Driver m4 = new();
 
             Monster[] monsters =
             {
-                m3
+                m4
             };
 
             return monsters[new Random().Next(monsters.Length)];

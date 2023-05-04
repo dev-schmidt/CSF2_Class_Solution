@@ -10,14 +10,14 @@ namespace Dungeon
             #region Introduction
             //Start to play background music? (.wav) < 100MB
             //System.Windows.Extensions (NuGet package)
-            Console.Title = "DUNGEON OF DOOM!";
+            Console.Title = "THE DUNGEON OF MUNDANE ADVERSARIES!";
             Console.WriteLine("Welcome, adventurer! Your journey awaits!");
 
             # endregion
 
             //TODO - variable to keep score
             //potential expansion, use "money" of some sort to let the user buy potions,
-            //weapons, whatever.
+            
             int score = 0;
             //TODO - weapon object creation
 
@@ -35,7 +35,7 @@ namespace Dungeon
             {
                 //generate a room
                 Console.WriteLine(GetRoom());
-                //TODO - generate a monster
+                //generate a monster
                 Monster monster = GetMonster();
                 Console.WriteLine("In this room: " + monster.Name);
 
@@ -122,7 +122,8 @@ namespace Dungeon
             Console.WriteLine("You have defeated " + score + $"monster{(score == 1? "." : "s.")}");
         }//end main
 
-        //TODO GetRoom() returns a string (reference magic 8 ball)
+        //GetRoom() returns a string (reference magic 8 ball)
+        //TODO rewrite the room descriptions
         private static string GetRoom()
         {
             //create a string[]

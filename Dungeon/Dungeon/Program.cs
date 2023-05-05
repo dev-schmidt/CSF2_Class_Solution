@@ -47,6 +47,8 @@ namespace Dungeon
             Console.Clear();
 
             Weapon userWeapon = weapons[userChoice - 1];
+
+
             //POTENTIAL EXPANSION = show the user a list of weapons and let them pick one. Or, assign one
             //randomly.
 

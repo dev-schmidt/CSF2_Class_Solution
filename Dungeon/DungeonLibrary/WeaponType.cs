@@ -8,10 +8,10 @@ namespace DungeonLibrary
 {
     public enum WeaponType
     {
-        Axe,
-        Bow,
-        Dagger,
-        Mace,
+        Noodle,
+        Candy,
+        Spray,
+        Slap,
         Sword
 
     }

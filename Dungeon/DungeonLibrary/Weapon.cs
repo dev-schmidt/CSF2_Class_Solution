@@ -81,6 +81,7 @@ namespace DungeonLibrary
         }
         //CONSTRUCTORS
 
+        //weapon types: Noodle, Candy, Spray, Phone, Sword
         public Weapon (string name, int minDamage, int maxDamage, int bonusHitChance, bool isTwoHanded,
             WeaponType type)
         {

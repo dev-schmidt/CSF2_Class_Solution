@@ -11,24 +11,48 @@ namespace Dungeon
             //Start to play background music? (.wav) < 100MB
             //System.Windows.Extensions (NuGet package)
             Console.Title = "THE DUNGEON OF MUNDANE ADVERSARIES!";
-            Console.WriteLine("                       -================THE DUNGEON OF MUNDANE ADVERSARIES!================-\n");
+            Console.WriteLine("-================THE DUNGEON OF MUNDANE ADVERSARIES!================-\n");
             Console.WriteLine("Welcome, adventurer! Your journey awaits!\n");
 
             # endregion
 
+            Console.WriteLine("What be thy name?");
+            string username = Console.ReadLine();
+            Console.WriteLine();
+
+
             //TODO - variable to keep score
             //potential expansion, use "money" of some sort to let the user buy potions,
-            
-            int score = 0;
-            //TODO - weapon object creation
 
-            Weapon wep = new("Long Sword", 1, 8, 10, false, WeaponType.Sword);
+            int score = 0;
+            //weapon object creation
+
+            Weapon noodle = new("Wet Pool Noodle", 1, 8, 10, false, WeaponType.Noodle);
+            Weapon candy = new("Baggie of Frozen Candy Corn", 1, 8, 10, true, WeaponType.Candy);
+            Weapon spray = new("Spray Bottle", 1, 8, 10, false, WeaponType.Spray);
+            Weapon slap = new("Slap", 1, 8, 10, false, WeaponType.Slap);
+            Weapon sword = new("Big Scary Sword", 1, 8, 10, true, WeaponType.Sword);
+
+            List<Weapon> weapons = new(){ noodle, candy, spray, slap, sword };
+            Console.WriteLine("Enter a number to choose your tool of destruction: \n");
+
+            int index = 1;
+            foreach(var item in weapons)
+            {
+                Console.WriteLine(index + ") " + item.Name);
+                index++;
+            }
+
+            int userChoice = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+
+            Weapon userWeapon = weapons[userChoice - 1];
             //POTENTIAL EXPANSION = show the user a list of weapons and let them pick one. Or, assign one
             //randomly.
 
-            //TODO - Player object creation
+            //Player object creation
             //Recommended expansion = player customization. let the user pick a name and a race.
-            Player player = new("Leeroy Jenkins", 70, 15, 40, Race.Elf, wep);
+            Player player = new($"\n{username}", 70, 15, 40, Race.Elf, userWeapon);
 
             //main game loop
             bool lose = false;
@@ -88,7 +112,7 @@ namespace Dungeon
                         case ConsoleKey.P://player
                             Console.WriteLine("Player Info");
                             Console.WriteLine(player);
-                            Console.WriteLine("You have defeated " + score + "monsters.");
+                            Console.WriteLine("You have defeated " + score + " monsters.");
                             break;
                         case ConsoleKey.M://monster
                             Console.WriteLine("Monster Info");
@@ -179,6 +203,9 @@ namespace Dungeon
 
             Monster[] monsters =
             {
+                m1,
+                m2,
+                m3,
                 m4
             };
 

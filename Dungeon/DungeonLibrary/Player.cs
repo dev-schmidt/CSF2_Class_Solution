@@ -36,19 +36,22 @@ namespace DungeonLibrary
             switch (PlayerRace)
             {
                 case Race.Argonian:
-                    raceDescription = "Argonian: A sssssuperb choicccce.";
+                    raceDescription = "Argonian - A sssssuperb choicccce.";
+                    Block += 5;
                     break;
                 case Race.Elf:
-                    raceDescription = "Elf: Not the kind that makes cookies in the forrest.";
+                    raceDescription = "Elf - Not the kind that makes cookies in the forrest.";
+                    MaxLife -= 10;
                     break;
                 case Race.Human:
-                    raceDescription = "Human: The most boring choice.";
+                    raceDescription = "Human - The most boring choice.";
                     break;
                 case Race.Khajiit:
-                    raceDescription = "Khajiit: Let's just say he's a cat person.";
+                    raceDescription = "Khajiit - Let's just say they are definitely a cat person.";
+                    HitChance += 5;
                     break;
                 case Race.Orc:
-                    raceDescription = "Orc: He likes to smash things!";
+                    raceDescription = "Orc - He likes to smash things!";
                     MaxLife += 10;
                     break;
                 default:

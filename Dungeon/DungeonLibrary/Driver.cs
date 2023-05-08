@@ -34,8 +34,7 @@ namespace DungeonLibrary
 
         public override string ToString()
         {
-            return base.ToString() + $"Name: {Name}\n\nDamage: " +
-                $"{MinDamage} - {MaxDamage}\n\n{Description}";
+            return base.ToString() + $"Name: {Name}\n\n{Description}";
         }
 
         public override int CalcDamage()

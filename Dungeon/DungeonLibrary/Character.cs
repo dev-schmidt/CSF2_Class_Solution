@@ -84,10 +84,10 @@
         public override string ToString()
         {
             return $"{Name}\n" +
-                $"Maximum Life Points: {MaxLife}" +
-                $"Life Points: {Life}" +
-                $"Chance to Hit: {HitChance}" +
-                $"Block: {Block}";
+                $"Maximum Life Points: {MaxLife}\n" +
+                $"Life Points: {Life}\n" +
+                $"Chance to Hit: {HitChance}\n" +
+                $"Block: {Block} \n";
         }
 
         //returns the in Block property, for now

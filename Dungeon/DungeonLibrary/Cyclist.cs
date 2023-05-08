@@ -58,7 +58,7 @@ namespace DungeonLibrary
             {
                 betterBlock += BlockBonus;
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Block bonus!");
+                Console.WriteLine("Angry Cyclist used his bike as a shield for a block bonus!");
                 Console.ResetColor();
             }
             return betterBlock;

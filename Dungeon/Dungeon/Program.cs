@@ -1,6 +1,9 @@
 ﻿using DungeonLibrary;
 using System.Runtime.InteropServices;
 
+//The only requirement not implemented at present is testing.
+//Outside of this, I would like to clean up the presentation
+//in the console and make it more interesting.
 namespace Dungeon
 {
     internal class Program
@@ -48,12 +51,11 @@ namespace Dungeon
 
             Weapon userWeapon = weapons[userChoice - 1];
 
-            //POTENTIAL EXPANSION = show the user a list of weapons and let them pick one. Or, assign one
-            //randomly.
+            //TODO - allow the user to choose their race
 
             //Player object creation
             //Recommended expansion = player customization. let the user pick a name and a race.
-            Player player = new($"\n{username}", 70, 15, 40, Race.Elf, userWeapon);
+            Player player = new($"\n{username}", 70, 15, 40, Race.Khajiit, userWeapon);
 
             //main game loop
             bool lose = false;
@@ -63,7 +65,9 @@ namespace Dungeon
                 Console.WriteLine(GetRoom());
                 //generate a monster
                 Monster monster = GetMonster();
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("In this room: " + monster.Name);
+                Console.ResetColor();
 
 
                 #region Main Menu Loop
@@ -111,12 +115,12 @@ namespace Dungeon
                             reload = true;
                             break;
                         case ConsoleKey.P://player
-                            Console.WriteLine("Player Info");
+                            Console.WriteLine("Player Info: \n");
                             Console.WriteLine(player);
                             Console.WriteLine("You have defeated " + score + " monsters.");
                             break;
                         case ConsoleKey.M://monster
-                            Console.WriteLine("Monster Info");
+                            Console.WriteLine("Monster Info: \n");
                             Console.WriteLine(monster);
                             break;
 
@@ -135,8 +139,10 @@ namespace Dungeon
                     //check player life. If they're dead, game over.
                     if (player.Life <= 0)
                     {
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Dude, you died.\a");
                         lose = true;
+                        Console.ResetColor(); 
                     }
                 } while (!reload && !lose);
                 //while reload and lose are BOTH FALSE, keep looping.
@@ -175,8 +181,7 @@ namespace Dungeon
 
                 "You seek refuge from the blizzard in a frozen ship-wreck by the mouth of the river. The smell of gun powder " +
                 "is nauseating but you wish only to rest here for a short spell. Within your dreams, you lounge on the upper deck, " +
-                "the summery sea breeze tickling at your bare feet. Suddenly, you are disturbed by an otherworldy wail, and look up to " +
-                "see a silhouette looming in the crow's nest...\n"
+                "the summery sea breeze tickling at your bare feet. Suddenly, you are disturbed by an otherworldy wail..."
                 };
             //rng
             Random rand = new Random();

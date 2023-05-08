@@ -49,8 +49,8 @@ namespace DungeonLibrary
             //default ctor
         }
 
-        //TODO - override the ToString() to include your new custom props.
-        //TODO - override CalcDamage()
+        //override the ToString() to include your new custom props.
+        //override CalcDamage()
         public override string ToString()
         {
             return base.ToString() + $"\nDamage: {MinDamage} - {MaxDamage}\n{Description}";
